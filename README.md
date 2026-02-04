@@ -1,47 +1,58 @@
-# Assignment 01: Field Robotics - Autonomous Exploration
+# Field Robot: Autonomous Exploration & SLAM
 
-## Description
-This project implements an autonomous exploration task for a field robot in a Gazebo simulation environment. The robot uses SLAM to map the environment and a navigation stack to explore autonomously.
+[![ROS 2](https://img.shields.io/badge/ROS2-Humble%20%7C%20Iron%20%7C%20Rolling-blue)](https://docs.ros.org/en/humble/index.html)
+[![License](https://img.shields.io/badge/License-Apache%202.0-orange.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## Prerequisites
-- **ROS 2** (Humble/Iron/Rolling)
-- `gazebo_ros_pkgs`
-- `navigation2`
-- `slam_toolbox`
+This repository features a comprehensive ROS 2 workspace for a field robot designed for autonomous exploration and environment mapping.
 
-## Installation
-Ensure you have the necessary dependencies installed:
+## 📺 Demonstrations
+
+### 1. Autonomous Exploration (Task 3)
+![Exploration Demo](media/Task%203.webm)
+
+### 2. SLAM & Mapping (Task 2)
+![SLAM Demo](media/Task%202.webm)
+
+### 3. Simulation Environment (Task 1)
+![Simulation Demo](media/Task%201.webm)
+
+## 🚀 Key Features
+- **Autonomous Exploration**: Implements a frontier-based exploration algorithm.
+- **SLAM**: Integrated with `slam_toolbox`.
+- **Robust Navigation**: Utilizes `Nav2` with fine-tuned DWB planners.
+
+## 🛠️ Prerequisites & Installation
+Ensure you have ROS 2 Humble installed on Ubuntu 22.04.
+
+### 1. Install Dependencies
 ```bash
 sudo apt update
-sudo apt install ros-humble-gazebo-ros-pkgs ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-slam-toolbox
+sudo apt install ros-humble-gazebo-ros-pkgs \
+                 ros-humble-navigation2 \
+                 ros-humble-nav2-bringup \
+                 ros-humble-slam-toolbox
 ```
 
-## Setup & Compilation
-1. Navigate to the workspace directory:
-   ```bash
-   cd workspace
-   ```
-2. Build the workspace:
-   ```bash
-   colcon build
-   ```
-3. Source the workspace:
-   ```bash
-   source install/setup.bash
-   ```
-
-## Usage
-To run the autonomous exploration task (Task 3), execute the provided script in the `workspace` directory:
-
+### 2. Build the Workspace
 ```bash
-./run_task_3.sh
+mkdir -p field_robot_ws/src
+cd field_robot_ws
+# Copy the contents of this repo into src/
+colcon build --symlink-install
+source install/setup.bash
 ```
 
-This script will automatically:
-1. Launch the Gazebo simulation with the robot.
-2. Start SLAM and the Navigation2 stack.
-3. specific exploration controller node to drive the robot.
+## 🎮 Usage
+To launch the full autonomous exploration pipeline:
+```bash
+./workspace/run_task_3.sh
+```
 
-## Author
-**Gandamalla Viswa**
-viswag001@gmail.com
+## 📊 System Architecture
+The system follows a modular ROS 2 architecture:
+- `field_robot_description`: URDF/Xacro models.
+- `field_robot_gazebo`: Gazebo plugins.
+- `field_robot_navigation`: Nav2 parameters and controllers.
+
+## 📬 Contact
+**Gandamalla Viswa** - [viswag001@gmail.com](mailto:viswag001@gmail.com)
