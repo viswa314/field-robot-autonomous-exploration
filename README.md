@@ -8,13 +8,16 @@ This repository features a comprehensive ROS 2 workspace for a field robot desig
 ## 📺 Demonstrations
 
 ### 1. Autonomous Exploration (Task 3)
-![Exploration Demo](media/Task%203.webm)
+<video src="media/Task%203.webm" controls="controls" style="max-width: 100%;">
+</video>
 
 ### 2. SLAM & Mapping (Task 2)
-![SLAM Demo](media/Task%202.webm)
+<video src="media/Task%202.webm" controls="controls" style="max-width: 100%;">
+</video>
 
 ### 3. Simulation Environment (Task 1)
-![Simulation Demo](media/Task%201.webm)
+<video src="media/Task%201.webm" controls="controls" style="max-width: 100%;">
+</video>
 
 ## 🚀 Key Features
 - **Autonomous Exploration**: Implements a frontier-based exploration algorithm.
